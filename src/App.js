@@ -1,14 +1,16 @@
-import { Router } from 'express';
-import { Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Login from './Login';
+import Sign from './Sign';
+import Signin from './Signin'
+import Signup from './Signup'
 
 export default function App() {
   return (
-    <Router>
       <Routes>
-      <Route path="/" element={<Login />} />
+        <Route path="/" element={<Sign />}>
+          <Route path="/signup" element={<Signup />}/>
+          <Route path="/" element={<Signin />}/>
+        </Route>
       </Routes>
-    </Router>
   )
 }

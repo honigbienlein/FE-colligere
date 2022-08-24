@@ -1,24 +1,13 @@
 import React from 'react'
-import './Sign.css'
+import './Signup.css'
 
-export default function Login() {
+export default function Signup() {
   return (
-    <>
-        <div className="form">
-            <img src='images/colligere-logo.png' alt="logo"/>
-            <div className="top">
-                <div className="sign-area">
-                    <a className="signIN active"  href="#signin">Sign In</a>
-                    <a className="signUP" href="#signup">Sign Up</a>
-                </div>
-                <div className="input-area">
-                        <input placeholder='Username' name='username' className='Username'/>
-                        <input placeholder='Password' name='password' className='Password'/>
-                        <button className="buttonSignIN">Sign In</button>
-                </div>
-            </div>
-            <p class="forgot"><a href="/">Forgot Password?</a></p>
-        </div>
-    </>
+    <div className="signup">
+      <input placeholder='Username' name='username' className='input'/>
+      <input placeholder='E-Mail' name='email' className='input'/>
+      <input placeholder='Password' name='password' className='input'/>
+      <button className="buttonSignUP">Sign Up</button>
+    </div>
   )
 }

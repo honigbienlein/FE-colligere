@@ -1,8 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Sign from './Sign';
-import Signin from './Signin'
-import Signup from './Signup'
+import Collections from './Components/Collections';
+import Sign from './Components/Sign';
+import Signin from './Components/Signin'
+import Signup from './Components/Signup'
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
           <Route path="/signup" element={<Signup />}/>
           <Route path="/" element={<Signin />}/>
         </Route>
+        <Route path="/collections" element={<Collections/>} />
       </Routes>
   )
 }

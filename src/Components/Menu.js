@@ -1,13 +1,13 @@
 import React from 'react'
 import '../css/menu.css'
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
 
 export default function Menu() {
-
+  const { collectionId } = useParams();
   let mainMenu = true
   const location = useLocation()
   console.log(location)
-  if(location.pathname = "/menu"){
+  if(location.pathname === `/collections/${collectionId}`){
       mainMenu = false;
   }
 

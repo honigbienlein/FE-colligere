@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Collections from './Components/Collections';
+import Collection from './Components/Collection'
 import Menu from './Components/Menu';
 import Sign from './Components/Sign';
 import Signin from './Components/Signin'
@@ -15,6 +16,7 @@ export default function App() {
     </Route>
     <Route path="/menu" element={<Menu />}></Route>
     <Route path="/collections" element={<Collections/>} />
+    <Route path="/collections/:id" element={<Collection />} />
   </Routes>
   )
 }

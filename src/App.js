@@ -6,6 +6,7 @@ import Menu from './Components/Menu';
 import Sign from './Components/Sign';
 import Signin from './Components/Signin'
 import Signup from './Components/Signup'
+import Item from './Components/Item'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
     <Route path="/menu" element={<Menu />}></Route>
     <Route path="/collections" element={<Collections/>} />
     <Route path="/collections/:id" element={<Collection />} />
+    <Route path="/collections/:id/:id" element={<Item />} />
   </Routes>
   )
 }

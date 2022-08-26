@@ -8,17 +8,13 @@ import Signup from './Components/Signup'
 
 export default function App() {
   return (
-      <Routes>
-        <Route path="/" element={<Sign />}>
-          <Route path="/signup" element={<Signup />}/>
-          <Route path="/" element={<Signin />}/>
-        </Route>
-        <Route>
-          <Route path="/collections" element={<Collections/>} />
-        </Route>
-      </Routes>
-/*       <Routes>
-        <Route path="/" element={<Menu />}></Route>
-      </Routes> */
+  <Routes>
+    <Route path="/" element={<Sign />}>
+      <Route path="/signup" element={<Signup />}/>
+      <Route path="/" element={<Signin />}/>
+    </Route>
+    <Route path="/menu" element={<Menu />}></Route>
+    <Route path="/collections" element={<Collections/>} />
+  </Routes>
   )
 }

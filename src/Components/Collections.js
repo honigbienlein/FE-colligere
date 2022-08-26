@@ -1,7 +1,7 @@
 import React from 'react'
-import { Route } from 'react-router'
 import '../css/collections.css'
 import Card from './Card'
+import Menu from './Menu'
 
 export default function Collections() {
   return (
@@ -11,6 +11,9 @@ export default function Collections() {
       </div>
       <div className="wrapper">
         <Card />
+      </div>
+      <div className='menu'>
+        <Menu />
       </div>
     </>
   )

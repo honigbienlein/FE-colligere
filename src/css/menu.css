@@ -1,0 +1,17 @@
+.menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    position:fixed;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color: whitesmoke;
+}
+
+.menu img{
+    width: 1.2rem;
+    height: 1.2rem;
+    padding-top: 1rem;
+}

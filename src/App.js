@@ -7,7 +7,7 @@ import Sign from './Components/Sign';
 import Signin from './Components/Signin'
 import Signup from './Components/Signup'
 import Item from './Components/Item'
-
+import Settings from './Components/Settings'
 export default function App() {
   return (
   <Routes>
@@ -19,6 +19,7 @@ export default function App() {
     <Route path="/collections" element={<Collections/>} />
     <Route path="/collections/:id" element={<Collection />} />
     <Route path="/collections/:id/:id" element={<Item />} />
+    <Route path="/settings" element={<Settings />}></Route>
   </Routes>
   )
 }

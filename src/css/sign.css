@@ -24,13 +24,13 @@
   text-align: center;
 }
 
-a{
+.sign-area a{
   text-decoration: none;
   padding: 1em;
   color: black;
 }
 
-a.active {
+.sign-area a.active {
   background: black;
   color: white;
 }

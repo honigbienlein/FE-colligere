@@ -8,6 +8,8 @@ import Signin from './Components/Signin'
 import Signup from './Components/Signup'
 import Item from './Components/Item'
 import Settings from './Components/Settings'
+import Scan from './Components/Scan'
+
 export default function App() {
   return (
   <Routes>
@@ -17,9 +19,10 @@ export default function App() {
     </Route>
     <Route path="/menu" element={<Menu />}></Route>
     <Route path="/collections" element={<Collections/>} />
-    <Route path="/collections/:id" element={<Collection />} />
-    <Route path="/collections/:id/:id" element={<Item />} />
+    <Route path="/collections/:collectionId" element={<Collection />} />
+    <Route path="/collections/:collectionId/:itemId" element={<Item />} />
     <Route path="/settings" element={<Settings />}></Route>
+    <Route path="/addItem" element={<Scan />}></Route>
   </Routes>
   )
 }

@@ -8,11 +8,10 @@
     bottom:0;
     right:0;
     background-color: whitesmoke;
-    padding: 1rem;
+    padding: 1rem 0;
 }
 
 .menu img{
     width: 1.2rem;
     height: 1.2rem;
-    padding-top: 1rem;
 }

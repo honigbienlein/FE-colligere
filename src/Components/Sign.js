@@ -1,8 +1,6 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import './Sign.css'
-import Signin from './Signin.js'
-import Signup from './Signup.js'
+import '../css/sign.css'
 
 export default function Sign() {
 

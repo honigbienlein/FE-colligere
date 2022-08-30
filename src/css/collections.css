@@ -1,0 +1,17 @@
+.yourCollections h1{
+    width:fit-content;
+    background:linear-gradient(90deg,rgb(168, 127, 239),rgb(205, 53, 111),rgb(249, 4, 4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 4rem;
+    margin-bottom: 2rem;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+    gap: 2rem;
+    justify-content: center;
+}

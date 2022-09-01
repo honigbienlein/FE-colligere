@@ -1,12 +1,9 @@
-import React from 'react'
-import { useParams } from 'react-router'
-import '../css/collection.css'
-import Card from './Card'
-import Menu from './Menu'
+import React from "react";
+import "../css/collection.css";
+import Card from "./Card";
+import Menu from "./Menu";
 
-export default function Collection() {
-
-  const { collectionId } = useParams();
+export default function Collection({ setScannedData }) {
   //TBD: Get collectionsName of current collection
   /* const collectionName = FETCH */
   return (
@@ -18,9 +15,9 @@ export default function Collection() {
       <div className="wrapper">
         <Card />
       </div>
-      <div className='menu'>
-        <Menu />
+      <div className="menu">
+        <Menu setScannedData={setScannedData} />
       </div>
     </>
-  )
+  );
 }

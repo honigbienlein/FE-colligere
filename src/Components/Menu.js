@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../css/menu.css";
-import { NavLink, useLocation, useParams } from "react-router-dom";
+import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 import Scan from "./Scan";
 
 export default function Menu({ setScannedData }) {
   const [showScanner, setShowScanner] = useState(false);
   const [isActive, setIsActive] = useState(false);
+
+  const dialogRef = useRef();
+
+  const navigate = useNavigate();
 
   const { collectionId } = useParams();
   //console.log(collectionId)
@@ -26,7 +30,8 @@ export default function Menu({ setScannedData }) {
   }
 
   function saveCollection() {
-    //add collection to overview
+    //TBD: add collection to overview
+    dialogRef.current.close();
   }
 
   useEffect(() => {
@@ -43,11 +48,10 @@ export default function Menu({ setScannedData }) {
     }
   }, [showScanner]);
 
-  /* TBD: Correct links of the Navlinks */
   return (
     <>
       {/* Overlay for adding a collection */}
-      <dialog id="addCollection">
+      <dialog id="addCollection" ref={dialogRef}>
         <h1>Your new collection</h1>
         <h4>Choose a template:</h4>
         <div className="addtemplates">
@@ -61,8 +65,8 @@ export default function Menu({ setScannedData }) {
             Books
           </label>
         </div>
-        <div onClick={saveCollection} className="addbutton">
-          <button>Add</button>
+        <div className="addbutton">
+          <button onClick={saveCollection}>Add</button>
         </div>
       </dialog>
 

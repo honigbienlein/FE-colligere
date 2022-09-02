@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../css/menu.css";
-import {
-  NavLink,
-  Route,
-  Routes,
-  useLocation,
-  useParams,
-} from "react-router-dom";
+import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 import Scan from "./Scan";
 
 export default function Menu({ setScannedData }) {
   const [showScanner, setShowScanner] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
+  const dialogRef = useRef();
+
+  const navigate = useNavigate();
 
   const { collectionId } = useParams();
   //console.log(collectionId)
@@ -21,6 +20,19 @@ export default function Menu({ setScannedData }) {
     mainMenu = false;
   }
   //console.log(mainMenu)
+
+  function handleTemplate(event) {
+    //add classname for highlishting clicked template
+    setIsActive((current) => !current);
+    //get name of template for adding to collection
+    const templateName = event.target.dataset.value;
+    return templateName;
+  }
+
+  function saveCollection() {
+    //TBD: add collection to overview
+    dialogRef.current.close();
+  }
 
   useEffect(() => {
     const backdrops = document.querySelectorAll("dialog::backdrop");
@@ -36,20 +48,25 @@ export default function Menu({ setScannedData }) {
     }
   }, [showScanner]);
 
-  /* TBD: Correct links of the Navlinks */
   return (
     <>
       {/* Overlay for adding a collection */}
-      <dialog id="addCollection">
+      <dialog id="addCollection" ref={dialogRef}>
         <h1>Your new collection</h1>
         <h4>Choose a template:</h4>
         <div className="addtemplates">
-          <label className="addtemplate">Books</label>
-          <label className="addtemplate">another</label>
-          <label className="addtemplate">one</label>
+          <label
+            onClick={handleTemplate}
+            className={
+              isActive ? "addtemplate highlightSelectedTemplate" : "addtemplate"
+            }
+            data-value="books"
+          >
+            Books
+          </label>
         </div>
         <div className="addbutton">
-          <button>Add</button>
+          <button onClick={saveCollection}>Add</button>
         </div>
       </dialog>
 

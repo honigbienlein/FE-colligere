@@ -1,3 +1,4 @@
+/* menu */
 .menu{
     width: 100%;
     display: flex;
@@ -16,6 +17,7 @@
     height: 1.2rem;
 }
 
+/* add collection */ 
 #addCollection{
     display: flex;
     flex-direction: column;
@@ -51,6 +53,10 @@
     margin: .5rem 0;
 }
 
+.highlightSelectedTemplate{
+    border: 1px solid black;
+}
+
 .addbutton{
     display: flex;
     justify-content: center;
@@ -68,6 +74,7 @@
     border: 1px solid grey;
 }
 
+/* add item */
 #addItem{
     display: flex;
     flex-direction: column;

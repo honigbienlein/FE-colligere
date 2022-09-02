@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../css/menu.css";
-import {
-  NavLink,
-  Route,
-  Routes,
-  useLocation,
-  useParams,
-} from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 import Scan from "./Scan";
 
 export default function Menu({ setScannedData }) {
   const [showScanner, setShowScanner] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const { collectionId } = useParams();
   //console.log(collectionId)
@@ -21,6 +16,18 @@ export default function Menu({ setScannedData }) {
     mainMenu = false;
   }
   //console.log(mainMenu)
+
+  function handleTemplate(event) {
+    //add classname for highlishting clicked template
+    setIsActive((current) => !current);
+    //get name of template for adding to collection
+    const templateName = event.target.dataset.value;
+    return templateName;
+  }
+
+  function saveCollection() {
+    //add collection to overview
+  }
 
   useEffect(() => {
     const backdrops = document.querySelectorAll("dialog::backdrop");
@@ -44,11 +51,17 @@ export default function Menu({ setScannedData }) {
         <h1>Your new collection</h1>
         <h4>Choose a template:</h4>
         <div className="addtemplates">
-          <label className="addtemplate">Books</label>
-          <label className="addtemplate">another</label>
-          <label className="addtemplate">one</label>
+          <label
+            onClick={handleTemplate}
+            className={
+              isActive ? "addtemplate highlightSelectedTemplate" : "addtemplate"
+            }
+            data-value="books"
+          >
+            Books
+          </label>
         </div>
-        <div className="addbutton">
+        <div onClick={saveCollection} className="addbutton">
           <button>Add</button>
         </div>
       </dialog>

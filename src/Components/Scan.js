@@ -33,7 +33,7 @@ export default function Scan({ setScannedData, collectionId }) {
                 console.log(`QR Code detected: ${qrCodeMessage}`);
                 //expample isbn 9781549776670
                 axios
-                  .get(`http://localhost:8000/books/${qrCodeMessage}`)
+                  .get(`https://colligere.herokuapp.com/books/${qrCodeMessage}`)
                   .then(async (data) => {
                     setScannedData(data.data);
                     await html5QrCode.stop();

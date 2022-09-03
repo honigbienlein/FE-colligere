@@ -12,7 +12,7 @@ export default function Signin() {
   function login() {
     console.lot("get");
     axios
-      .get(`https://colligere.herokuapp.com/books/users/${usernameRef}`)
+      .get(`https://colligere.herokuapp.com/users/${usernameRef}`)
       .then(async (data) => {
         if (usernameRef === data.username) {
           console.log("username");

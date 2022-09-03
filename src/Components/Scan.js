@@ -37,7 +37,7 @@ export default function Scan({ setScannedData, collectionId }) {
                   .then(async (data) => {
                     setScannedData(data.data);
                     await html5QrCode.stop();
-                    navigate(`/collectionts/${collectionId}/addItem`);
+                    navigate(`/collections/${collectionId}/addItem`);
                   });
               },
               (errorMessage) => {

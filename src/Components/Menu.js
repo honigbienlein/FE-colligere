@@ -8,6 +8,7 @@ export default function Menu({ setScannedData }) {
   const [isActive, setIsActive] = useState(false);
 
   const dialogRef = useRef();
+  const collectionnameRef = useRef();
 
   const navigate = useNavigate();
 
@@ -53,8 +54,12 @@ export default function Menu({ setScannedData }) {
       {/* Overlay for adding a collection */}
       <dialog id="addCollection" ref={dialogRef}>
         <h1>Your new collection</h1>
-        <h4>Choose a template:</h4>
+        <div className="addCollectionName">
+          <h4>Enter a collectionname:</h4>
+          <input ref={collectionnameRef} type="text"></input>
+        </div>
         <div className="addtemplates">
+          <h4>Choose a template:</h4>
           <label
             onClick={handleTemplate}
             className={

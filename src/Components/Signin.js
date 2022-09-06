@@ -9,21 +9,20 @@ export default function Signin() {
 
   const navigate = useNavigate();
 
-  function login() {
-    console.lot("get");
+  function login(event) {
+    event.preventDefault();
     axios
-      .get(`https://colligere.herokuapp.com/users/${usernameRef}`)
+      .get(`https://colligere.herokuapp.com/users/${usernameRef.current.value}`)
       .then(async (data) => {
-        if (usernameRef === data.username) {
-          console.log("username");
-          if (passwordRef === data.password) {
-            console.log("password");
-            navigate("/collections");
-          } else {
-            <dialog>
-              <p>Your password is wrong</p>
-            </dialog>;
-          }
+        console.log(data);
+        console.log(usernameRef.current.value);
+        console.log(data.data.username);
+        if (usernameRef.current.value === data.data.username) {
+          navigate(`/users/${data.data.id_user}/collections`);
+        } else {
+          <dialog>
+            <p>Your password is wrong</p>
+          </dialog>;
         }
       });
   }

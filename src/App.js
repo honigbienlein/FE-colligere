@@ -26,10 +26,13 @@ export default function App() {
       </Route>
       <Route path="/users/:userId/collections" element={<Collections />} />
       <Route
-        path="/collections/:collectionId"
+        path="/users/:userId/collections/:collectionId"
         element={<Collection setScannedData={setScannedData} />}
       />
-      <Route path="/collections/:collectionId/:itemId" element={<Item />} />
+      <Route
+        path="/users/:userId/collections/:collectionId/items/:itemId"
+        element={<Item />}
+      />
       <Route path="/settings" element={<Settings />}></Route>
       <Route
         path="/collectionts/:collectionId/addItem"

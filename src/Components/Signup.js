@@ -10,15 +10,15 @@ export default function Signup() {
 
   const navigate = useNavigate();
 
-  function signup() {
-    axios.post("/", {
-      data: {
-        username: usernameRef,
-        email: emailRef,
-        password: passwordRef,
-      },
+  async function signup(event) {
+    event.preventDefault();
+    const user = await axios.post("https://colligere.herokuapp.com/users", {
+      username: usernameRef.current.value,
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
     });
-    navigate("/collections");
+    console.log(user);
+    navigate(`/users/${user.data.id_user}/collections`);
   }
   return (
     <form onSubmit={signup}>

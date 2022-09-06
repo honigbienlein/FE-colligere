@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../css/menu.css";
-import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 import Scan from "./Scan";
 import axios from "axios";
 import { HEROKUURL } from "../environmentVariables";
@@ -11,9 +11,6 @@ export default function Menu({ setScannedData }) {
 
   const dialogRef = useRef();
   const collectionnameRef = useRef();
-
-  const navigate = useNavigate();
-
   const { collectionId, userId } = useParams();
 
   let mainMenu = true;
@@ -33,13 +30,10 @@ export default function Menu({ setScannedData }) {
   }
 
   async function saveCollection() {
-    const response = await axios.post(
-      `${HEROKUURL}/users/${userId}/collections`,
-      {
-        templateId: 1,
-        collectionName: collectionnameRef.current.value,
-      }
-    );
+    await axios.post(`${HEROKUURL}/users/${userId}/collections`, {
+      templateId: 1,
+      collectionName: collectionnameRef.current.value,
+    });
     dialogRef.current.close();
     window.location.reload(true);
   }

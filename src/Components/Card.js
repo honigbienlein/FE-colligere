@@ -1,17 +1,16 @@
-import React from 'react'
-import '../css/card.css'
+import React from "react";
+import "../css/card.css";
 
-export default function Card() {
-
-  const backgroundImg = {background: "url('../images/books.jpeg')"};
+export default function Card({ title }) {
+  const backgroundImg = { background: "url('../images/books.jpeg')" };
 
   return (
     <>
-        <div className="card" style={backgroundImg}> 
-          <div className="card-title">
-            <p>I am a title</p>
-          </div>    
+      <div className="card" style={backgroundImg}>
+        <div className="card-title">
+          <p>{title}</p>
         </div>
+      </div>
     </>
-  )
+  );
 }

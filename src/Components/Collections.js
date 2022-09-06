@@ -5,6 +5,7 @@ import "../css/collections.css";
 import Card from "./Card";
 import Menu from "./Menu";
 import { HEROKUURL } from "../environmentVariables.js";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Collections() {
   const [collections, setCollections] = useState([]);
@@ -24,7 +25,15 @@ export default function Collections() {
       </div>
       <div className="wrapper">
         {collections?.map((collection, i) => (
-          <Card id={i + 1} key={i} name={collection.title} />
+          <NavLink
+            to={`/users/${userId}/collections/${collection.id_collection}`}
+          >
+            <Card
+              id={collection.id_collection}
+              key={collection.id_collection}
+              title={collection.name_collection}
+            />
+          </NavLink>
         ))}
       </div>
       <div className="menu">

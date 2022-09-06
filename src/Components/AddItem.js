@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useNavigate, useParams } from "react-router";
 import axios from "axios";
 import "../css/addItem.css";
+import { HEROKUURL } from "../environmentVariables";
 
 export default function AddItem({ scannedData }) {
   const { collectionId, userId } = useParams();
@@ -14,27 +15,26 @@ export default function AddItem({ scannedData }) {
   const publishDateRef = useRef();
   const publishersRef = useRef();
   const commentRef = useRef();
-  const statusRef = useRef();
+  const yesStatusRef = useRef();
+  const noStatusRef = useRef();
 
   function saveItem() {
     console.log(titleRef.current?.value);
-    //TBD: Change route
-    axios.post("/addItem", {
-      data: {
-        cover: scannedData.cover,
-        title: titleRef,
-        subtitle: subtitleRef,
-        authors: authorsRef,
-        pages: pagesRef,
+    axios
+      .post(`${HEROKUURL}/users/${userId}/collections/${collectionId}/items`, {
+        cover: scannedData?.cover,
+        status: statusRef?.current?.value,
+        title: titleRef?.current?.value,
+        subtitle: subtitleRef?.current?.value,
+        authors: authorsRef?.current?.value,
+        pages: pagesRef?.current?.value,
         isbn_10: scannedData?.isbn_10,
         isbn_13: scannedData?.isbn_13,
-        publishers: scannedData.publishers,
-        publish_date: scannedData.publish_date,
-        /* comment: , */
-      },
-    });
-    //TBD navigate to the corresponding collection
-    navigate(`/users/${userId}/collections/${collectionId}`);
+        publishers: scannedData?.publishers,
+        publish_date: scannedData?.publish_date,
+        comment: commentRef?.current?.value,
+      })
+      .then(() => navigate(`/users/${userId}/collections/${collectionId}`));
   }
 
   if (!scannedData) {
@@ -50,11 +50,11 @@ export default function AddItem({ scannedData }) {
           <h4>Have I read this?</h4>
           <div className="addItemRightStatus">
             <div className="addItemRightStatus">
-              <input ref={titleRef} type="radio" name="status" />
+              <input ref={yesStatusRef} type="radio" name="yesStatus" />
               <img src="/images/yes.png" />
             </div>
             <div className="addItemRightStatus">
-              <input ref={titleRef} type="radio" name="status" />
+              <input ref={noStatusRef} type="radio" name="noStatus" />
               <img src="/images/no.png" />
             </div>
           </div>

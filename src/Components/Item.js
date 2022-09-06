@@ -23,7 +23,6 @@ export default function Item() {
   return (
     <>
       <div className="item">
-        {/* TBD: get itemname */}
         <h1>{item.title}</h1>
         <div className="itemTop">
           <div className="itemTopLeft">
@@ -35,26 +34,24 @@ export default function Item() {
             <h4>Subtitle</h4>
             <p>{item.subtitle}</p>
             <h4>Author(s)</h4>
-            <p>item.authors</p>
-            <h4>Genre</h4>
-            <p>Publicaton date</p>
-            <h4>01.01.2020</h4>
-            <p>Thriller</p>
+            <p>
+              {item.authors.length > 1
+                ? write(item.authors.join(", "))
+                : item.authors}
+            </p>
+            <h4>Pages</h4>
+            <p>{item.pages}</p>
+            <h4>Publish Date</h4>
+            <p>{item.publish_date}</p>
+            <h4>Publishers</h4>
+            <p>{item.publishers}</p>
+            <h4>ISBN</h4>
+            <p>{item.isbn}</p>
           </div>
         </div>
         <div className="itemBottom">
-          <h4>Summary</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Exercitationem dolores cum corporis, dolore, ducimus iusto tempora
-            illum earum ipsam, fugit natus temporibus dolor blanditiis
-            consequuntur? Illo dolores assumenda nemo tenetur!
-          </p>
-          <h4>Commentar</h4>
-          <p>
-            I love this book, it is so exciting! A must have. The best book I
-            have ever read!!!
-          </p>
+          <h4>Comment</h4>
+          <p>item.comment</p>
         </div>
       </div>
     </>

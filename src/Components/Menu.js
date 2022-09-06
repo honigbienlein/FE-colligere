@@ -16,7 +16,7 @@ export default function Menu({ setScannedData }) {
   let mainMenu = true;
   const location = useLocation();
   //console.log(location)
-  if (location.pathname === `/collections/${collectionId}`) {
+  if (location.pathname === `/users/${userId}/collections/${collectionId}`) {
     mainMenu = false;
   }
   //console.log(mainMenu)

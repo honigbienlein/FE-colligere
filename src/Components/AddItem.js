@@ -4,7 +4,7 @@ import axios from "axios";
 import "../css/addItem.css";
 
 export default function AddItem({ scannedData }) {
-  const { collectionId } = useParams();
+  const { collectionId, userId } = useParams();
   const navigate = useNavigate();
 
   const titleRef = useRef();
@@ -34,7 +34,7 @@ export default function AddItem({ scannedData }) {
       },
     });
     //TBD navigate to the corresponding collection
-    navigate(`/collections/${collectionId}`);
+    navigate(`/users/${userId}/collections/${collectionId}`);
   }
 
   if (!scannedData) {

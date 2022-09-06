@@ -14,9 +14,6 @@ export default function Signin() {
     axios
       .get(`https://colligere.herokuapp.com/users/${usernameRef.current.value}`)
       .then(async (data) => {
-        console.log(data);
-        console.log(usernameRef.current.value);
-        console.log(data.data.username);
         if (usernameRef.current.value === data.data.username) {
           navigate(`/users/${data.data.id_user}/collections`);
         } else {

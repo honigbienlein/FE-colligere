@@ -1,8 +1,7 @@
 import axios from "axios";
 import { Html5Qrcode } from "html5-qrcode";
-import React, { useEffect, useState, Redirect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
-import AddItem from "./AddItem";
 
 export default function Scan({ setScannedData, collectionId }) {
   const navigate = useNavigate();

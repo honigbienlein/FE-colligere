@@ -26,11 +26,11 @@ export default function Collections() {
       <div className="wrapper">
         {collections?.map((collection, i) => (
           <NavLink
+            key={collection.id_collection}
             to={`/users/${userId}/collections/${collection.id_collection}`}
           >
             <Card
               id={collection.id_collection}
-              key={collection.id_collection}
               title={collection.name_collection}
             />
           </NavLink>

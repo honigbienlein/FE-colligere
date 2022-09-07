@@ -1,35 +1,36 @@
+import { render } from "@testing-library/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { NavLink } from "react-router-dom";
-import "../css/collection.css";
 import { HEROKUURL } from "../environmentVariables";
 import Card from "./Card";
-import Menu from "./Menu";
+import "../css/search.css";
 
-export default function Collection({ setScannedData }) {
-  const [items, setItems] = useState([]);
-  const { userId, collectionId } = useParams();
+export default function Search() {
+  const { userId, input } = useParams();
+  const [items, setItems] = useState({});
 
+  // Get all items of user
   useEffect(() => {
     axios
-      .get(`${HEROKUURL}/users/${userId}/collections/${collectionId}/items`)
+      .get(`${HEROKUURL}/users/${userId}/items/${input}`)
       .then((response) => {
-        console.log(response.data);
         setItems(response.data);
       });
   }, []);
+
   return (
     <>
-      <div className="collection">
-        <h1>{items.name_collection}</h1>
+      <div className="search">
+        <h1>You were searching for: {input}</h1>
       </div>
       <div className="wrapper">
-        {items.Entries?.map((item, i) => {
-          console.log(item);
+        {items?.entries?.map((item, i) => {
+          console.log(items);
           return (
             <NavLink
-              to={`/users/${userId}/collections/${items.id_collection}/items/${item.entryId}`}
+              to={`/users/${userId}/collections/${item?.collectionId}/items/${item?.entryId}`}
             >
               <Card
                 id={item.entryId}
@@ -41,8 +42,10 @@ export default function Collection({ setScannedData }) {
           );
         })}
       </div>
-      <div className="menu">
-        <Menu setScannedData={setScannedData} />
+      <div className="goback">
+        <NavLink to={`/users/${userId}/collections/`}>
+          <img src="/images/goback.svg" alt="goback" width="16" />
+        </NavLink>
       </div>
     </>
   );

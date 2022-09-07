@@ -1,10 +1,11 @@
 import axios from "axios";
 import { Html5Qrcode } from "html5-qrcode";
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 export default function Scan({ setScannedData, collectionId }) {
   const navigate = useNavigate();
+  const { userId } = useParams();
 
   useEffect(() => {
     console.log("Effect");
@@ -36,7 +37,9 @@ export default function Scan({ setScannedData, collectionId }) {
                   .then(async (data) => {
                     setScannedData(data.data);
                     await html5QrCode.stop();
-                    navigate(`/collections/${collectionId}/addItem`);
+                    navigate(
+                      `/users/${userId}/collections/${collectionId}/addItem`
+                    );
                   });
               },
               (errorMessage) => {
@@ -58,7 +61,6 @@ export default function Scan({ setScannedData, collectionId }) {
       if (html5QrCode.isScanning) {
         await html5QrCode.stop();
         html5QrCode.clear();
-        console.log("STOP");
       }
     };
   }, []);

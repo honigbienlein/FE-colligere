@@ -1,8 +1,8 @@
 import React from "react";
 import "../css/card.css";
 
-export default function Card({ title }) {
-  const backgroundImg = { background: "url('../images/books.jpeg')" };
+export default function Card({ title, cover }) {
+  const backgroundImg = { backgroundImage: `url('${cover}')` };
 
   return (
     <>

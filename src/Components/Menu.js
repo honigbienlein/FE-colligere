@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../css/menu.css";
-import { NavLink, useLocation, useParams } from "react-router-dom";
+import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 import Scan from "./Scan";
 import axios from "axios";
 import { HEROKUURL } from "../environmentVariables";
@@ -13,13 +13,13 @@ export default function Menu({ setScannedData }) {
   const collectionnameRef = useRef();
   const { collectionId, userId } = useParams();
 
+  const navigate = useNavigate();
+
   let mainMenu = true;
   const location = useLocation();
-  //console.log(location)
   if (location.pathname === `/users/${userId}/collections/${collectionId}`) {
     mainMenu = false;
   }
-  //console.log(mainMenu)
 
   function handleTemplate(event) {
     //add classname for highlighting clicked template
@@ -36,6 +36,12 @@ export default function Menu({ setScannedData }) {
     });
     dialogRef.current.close();
     window.location.reload(true);
+  }
+
+  function openSearch() {
+    const input = window.prompt("Search for");
+    console.log(input);
+    navigate(`/users/${userId}/${input}`);
   }
 
   useEffect(() => {
@@ -92,11 +98,11 @@ export default function Menu({ setScannedData }) {
       {/* Menu bar */}
       <div className="menu">
         {mainMenu ? (
-          <NavLink to="/settings">
+          <NavLink to={`/users/${userId}/settings`}>
             <img src="/images/settings.svg" alt="settings" />
           </NavLink>
         ) : (
-          <NavLink to="/">
+          <NavLink to={`/users/${userId}/collections`}>
             <img src="/images/goback.svg" alt="goback" />
           </NavLink>
         )}
@@ -115,9 +121,9 @@ export default function Menu({ setScannedData }) {
             alt="plus"
           />
         )}
-        <NavLink to="/searchbar">
+        <div onClick={openSearch}>
           <img src="/images/magnifyingglass.svg" alt="magnifyingglass" />
-        </NavLink>
+        </div>
       </div>
     </>
   );

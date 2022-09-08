@@ -27,14 +27,14 @@
 
 .addItemRightStatus{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 }
 
 .addItemRightStatus img{
     max-height: 1rem;
     object-fit: contain;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
 }
 
 .addItemBottom{

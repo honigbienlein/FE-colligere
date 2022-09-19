@@ -1,38 +1,39 @@
-*{
-/*     box-sizing: border-box;
+* {
+	/*     box-sizing: border-box;
     border: solid red 1px; */
-} 
+}
 
 /*   Input fields & Links */
-  .signin{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  input, textarea {
-    font-size: 1em;
-    width: 100%;
-    border: 1px solid #a0b3b0;
-    margin-bottom: 1em;
-    padding: .5em;
-  }
-  
-  .buttonSignIN{
-    border: 1;
-    border-color: black;
-    padding: .8em 0;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: capitalize;
-    letter-spacing: .1em;
-    color: black;
-    background-color: white;;
-  }
+.signIn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 
-  .forgot{
-    margin-top: 2em;
-    text-align: right;
-    text-decoration: underline;
-    font-size: .8em;
-  }
+input,
+textarea {
+	font-size: 1em;
+	width: auto;
+	border: 1px solid #a0b3b0;
+	margin-bottom: 1em;
+	padding: 0.5em;
+}
+
+.buttonSignIn {
+	border: 1;
+	border-color: black;
+	padding: 0.8em 0;
+	font-size: 1rem;
+	font-weight: 600;
+	text-transform: capitalize;
+	letter-spacing: 0.1em;
+	color: black;
+	background-color: white;
+}
+
+.forgot {
+	margin-top: 2em;
+	text-align: right;
+	text-decoration: underline;
+	font-size: 0.8em;
+}

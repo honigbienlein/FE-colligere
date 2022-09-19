@@ -29,6 +29,7 @@ textarea {
 	letter-spacing: 0.1em;
 	color: black;
 	background-color: white;
+	cursor: pointer;
 }
 
 .forgot {

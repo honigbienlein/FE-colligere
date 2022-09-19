@@ -22,7 +22,7 @@ export default function Menu({ setScannedData }) {
 	}
 
 	function handleTemplate(event) {
-		//add classname for highlighting clicked template
+		//add className for highlighting clicked template
 		setIsActive(current => !current)
 		//get name of template for adding to collection
 		const templateName = event.target.dataset.value
@@ -100,7 +100,7 @@ export default function Menu({ setScannedData }) {
 					</NavLink>
 				) : (
 					<NavLink to={`/users/${userId}/collections`}>
-						<img src='/images/goback.svg' alt='goback' />
+						<img src='/images/goback.svg' alt='go back' />
 					</NavLink>
 				)}
 				{mainMenu ? (
@@ -119,7 +119,7 @@ export default function Menu({ setScannedData }) {
 					/>
 				)}
 				<div onClick={openSearch}>
-					<img src='/images/magnifyingglass.svg' alt='magnifyingglass' />
+					<img src='/images/magnifyingglass.svg' alt='magnifying glass' />
 				</div>
 			</div>
 		</>

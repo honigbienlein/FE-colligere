@@ -6,7 +6,7 @@ export default function Sign() {
 	return (
 		<div className='form'>
 			<img src='images/colligere-logo.png' alt='logo' />
-			<div className='sign-area'>
+			<div className='signArea'>
 				<NavLink to='/'>Sign In</NavLink>
 				<NavLink to='/signup'>Sign Up</NavLink>
 			</div>

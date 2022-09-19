@@ -14,7 +14,7 @@
 	box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
 
-.sign-area {
+.signArea {
 	display: flex;
 	justify-content: center;
 	list-style: none;
@@ -23,13 +23,13 @@
 	text-align: center;
 }
 
-.sign-area a {
+.signArea a {
 	text-decoration: none;
 	padding: 1em;
 	color: black;
 }
 
-.sign-area a.active {
+.signArea a.active {
 	background: black;
 	color: white;
 }

@@ -2,6 +2,7 @@ import axios from 'axios'
 import { Html5Qrcode } from 'html5-qrcode'
 import React, { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router'
+import { HEROKUURL } from '../environmentVariables'
 
 export default function Scan({ setScannedData, collectionId }) {
 	const navigate = useNavigate()
@@ -23,7 +24,7 @@ export default function Scan({ setScannedData, collectionId }) {
 					var cameraId = devices[0].id
 					html5QrCode
 						.start(
-							cameraId, // retreived in the previous step.
+							cameraId, // retrieved in the previous step.
 							{
 								fps: 10, // sets the framerate to 10 frame per second
 								qrbox: 250, // sets only 250 X 250 region of viewfinder to scannable, rest shaded.
@@ -31,14 +32,12 @@ export default function Scan({ setScannedData, collectionId }) {
 							qrCodeMessage => {
 								// do something when code is read. For example:
 								console.log(`QR Code detected: ${qrCodeMessage}`)
-								//expample isbn 9781549776670
-								axios
-									.get(`https://colligere.herokuapp.com/books/${qrCodeMessage}`)
-									.then(async data => {
-										setScannedData(data.data)
-										await html5QrCode.stop()
-										navigate(`/users/${userId}/collections/${collectionId}/addItem`)
-									})
+								// example ISBN 9781549776670
+								axios.get(`${HEROKUURL}/books/${qrCodeMessage}`).then(async data => {
+									setScannedData(data.data)
+									await html5QrCode.stop()
+									navigate(`/users/${userId}/collections/${collectionId}/addItem`)
+								})
 							},
 							errorMessage => {
 								// parse error, ideally ignore it. For example:

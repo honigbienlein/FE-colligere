@@ -1,94 +1,93 @@
 /* menu */
-.menu{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    position:fixed;
-    left:0;
-    bottom:0;
-    right:0;
-    background-color: whitesmoke;
-    padding: 1rem 0;
+.menu {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: whitesmoke;
+	padding: 1rem 0;
 }
 
-.menu img{
-    width: 1.2rem;
-    height: 1.2rem;
+.menu img {
+	width: 1.2rem;
+	height: 1.2rem;
 }
 
-/* add collection */ 
-#addCollection{
-    display: flex;
-    flex-direction: column;
-    background: white;
-    padding: 40px;
-    max-width: 600px;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-   
+/* add collection */
+#addCollection {
+	display: flex;
+	flex-direction: column;
+	background: white;
+	padding: 40px;
+	max-width: 600px;
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
 
-#addCollection h1{
-    width:fit-content;
-    background:linear-gradient(90deg,rgb(168, 127, 239),rgb(205, 53, 111),rgb(249, 4, 4));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+#addCollection h1 {
+	width: fit-content;
+	background: linear-gradient(90deg, rgb(168, 127, 239), rgb(205, 53, 111), rgb(249, 4, 4));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
-.addtemplates{
-    margin: 1rem 0;
+.addTemplates {
+	margin: 1rem 0;
 }
 
-.addtemplate{
-    display: block;
-    width: 100%;
-    padding: .15rem 0;
-    text-align: center;
-    background-color: rgb(229, 228, 228);
-    border: 1px dotted darkgrey;
-    margin: .5rem 0;
+.addTemplate {
+	display: block;
+	width: 100%;
+	padding: 0.15rem 0;
+	text-align: center;
+	background-color: rgb(229, 228, 228);
+	border: 1px dotted darkgrey;
+	margin: 0.5rem 0;
 }
 
-.highlightSelectedTemplate{
-    border: 1px solid black;
+.highlightSelectedTemplate {
+	border: 1px solid black;
 }
 
-.addbutton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.addButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.addbutton button{
-    background-color: rgb(229, 228, 228);
-    color: black;
-    padding: 7px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    width: 75%;
-    border: 1px solid grey;
+.addButton button {
+	background-color: rgb(229, 228, 228);
+	color: black;
+	padding: 7px 32px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	width: 75%;
+	border: 1px solid grey;
 }
 
 /* add item */
-#addItem{
-    display: flex;
-    flex-direction: column;
-    background: white;
-    padding: 40px;
-    max-width: 600px;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-    height: 20rem;
-    width: 20rem;
+#addItem {
+	display: flex;
+	flex-direction: column;
+	background: white;
+	padding: 40px;
+	max-width: 600px;
+	border: none;
+	border-radius: 4px;
+	box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+	height: 20rem;
+	width: 20rem;
 }
 
-#addItem h1{
-    width:fit-content;
-    background:linear-gradient(90deg,rgb(168, 127, 239),rgb(205, 53, 111),rgb(249, 4, 4));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+#addItem h1 {
+	width: fit-content;
+	background: linear-gradient(90deg, rgb(168, 127, 239), rgb(205, 53, 111), rgb(249, 4, 4));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }

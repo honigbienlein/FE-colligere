@@ -1,11 +1,10 @@
 import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import './css/App.css'
 import Collections from './Components/Collections'
 import Collection from './Components/Collection'
 import Sign from './Components/Sign'
-import Signin from './Components/Signin'
-import Signup from './Components/Signup'
+import SignIn from './Components/SignIn'
+import SignUp from './Components/SignUp'
 import Item from './Components/Item'
 import Settings from './Components/Settings'
 import AddItem from './Components/AddItem'
@@ -23,8 +22,8 @@ export default function App() {
 	return (
 		<Routes>
 			<Route path='/' element={<Sign />}>
-				<Route path='/signup' element={<Signup />} />
-				<Route path='/' element={<Signin />} />
+				<Route path='/signup' element={<SignUp />} />
+				<Route path='/' element={<SignIn />} />
 			</Route>
 			<Route path='/users/:userId/collections' element={<Collections />} />
 			<Route

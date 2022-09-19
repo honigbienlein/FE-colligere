@@ -1,16 +1,16 @@
 import axios from 'axios'
 import React, { useRef } from 'react'
 import { useNavigate } from 'react-router'
-import '../css/signin.css'
+import '../css/signIn.css'
 import { HEROKUURL } from '../environmentVariables'
 
-export default function Signin() {
+export default function SignIn() {
 	const usernameRef = useRef()
 	const passwordRef = useRef()
 
 	const navigate = useNavigate()
 
-	function login(event) {
+	function signIn(event) {
 		event.preventDefault()
 		axios.get(`${HEROKUURL}/users/${usernameRef.current.value}`).then(async data => {
 			if (usernameRef.current.value === data.data.username) {
@@ -24,7 +24,7 @@ export default function Signin() {
 	}
 	return (
 		<>
-			<form onSubmit={login}>
+			<form onSubmit={signIn}>
 				<div className='signIn'>
 					<input
 						ref={usernameRef}

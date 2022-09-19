@@ -1,51 +1,57 @@
-import axios from "axios";
-import React, { useRef } from "react";
-import { useNavigate } from "react-router";
-import "../css/signup.css";
+import axios from 'axios'
+import React, { useRef } from 'react'
+import { useNavigate } from 'react-router'
+import '../css/signUp.css'
+import { HEROKUURL } from '../environmentVariables'
 
-export default function Signup() {
-  const usernameRef = useRef();
-  const emailRef = useRef();
-  const passwordRef = useRef();
+export default function SignUp() {
+	const usernameRef = useRef()
+	const emailRef = useRef()
+	const passwordRef = useRef()
 
-  const navigate = useNavigate();
+	const navigate = useNavigate()
 
-  async function signup(event) {
-    event.preventDefault();
-    const user = await axios.post("https://colligere.herokuapp.com/users", {
-      username: usernameRef.current.value,
-      email: emailRef.current.value,
-      password: passwordRef.current.value,
-    });
-    console.log(user);
-    navigate(`/users/${user.data.id_user}/collections`);
-  }
-  return (
-    <form onSubmit={signup}>
-      <div className="signup">
-        <input
-          ref={usernameRef}
-          placeholder="Username"
-          name="username"
-          className="input"
-        />
-        <input
-          ref={emailRef}
-          placeholder="E-Mail"
-          name="email"
-          className="input"
-        />
-        <input
-          ref={passwordRef}
-          placeholder="Password"
-          name="password"
-          type="password"
-          className="input"
-        />
-        <button type="submit" className="buttonSignUP">
-          Sign Up
-        </button>
-      </div>
-    </form>
-  );
+	async function signUp(event) {
+		event.preventDefault()
+		const user = await axios.post(`${HEROKUURL}/users`, {
+			username: usernameRef.current.value,
+			email: emailRef.current.value,
+			password: passwordRef.current.value,
+		})
+		console.log(user)
+		navigate(`/users/${user.data.id_user}/collections`)
+	}
+	return (
+		<form onSubmit={signUp}>
+			<div className='signUp'>
+				<input
+					ref={usernameRef}
+					placeholder='Username'
+					name='username'
+					type='text'
+					className='input'
+					required
+				/>
+				<input
+					ref={emailRef}
+					placeholder='E-Mail'
+					name='email'
+					type='email'
+					className='input'
+					required
+				/>
+				<input
+					ref={passwordRef}
+					placeholder='Password'
+					name='password'
+					type='password'
+					className='input'
+					required
+				/>
+				<button type='submit' className='buttonSignUp'>
+					Sign Up
+				</button>
+			</div>
+		</form>
+	)
 }

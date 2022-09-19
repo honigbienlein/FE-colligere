@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
@@ -41,7 +40,7 @@ export default function Search() {
 			</div>
 			<div className='goBack'>
 				<NavLink to={`/users/${userId}/collections/`}>
-					<img src='/images/goback.svg' alt='goback' width='16' />
+					<img src='/images/goback.svg' alt='go back' width='16' />
 				</NavLink>
 			</div>
 		</>

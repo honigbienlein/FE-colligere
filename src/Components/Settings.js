@@ -55,7 +55,7 @@ export default function Settings() {
 			</div>
 			<div className='goBack'>
 				<NavLink to={`/users/${userId}/collections`}>
-					<img src='/images/goback.svg' alt='goBack' width='16' />
+					<img src='/images/goback.svg' alt='go back' width='16' />
 				</NavLink>
 			</div>
 		</div>

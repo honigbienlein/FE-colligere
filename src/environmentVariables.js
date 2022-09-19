@@ -1,2 +1,2 @@
-const HEROKUURL = "https://colligere.herokuapp.com";
-export { HEROKUURL };
+const HEROKUURL = 'https://colligere.herokuapp.com'
+export { HEROKUURL }

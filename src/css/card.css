@@ -1,31 +1,31 @@
-.card{
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    box-shadow: 0 2px 20px gray;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 200ms ease-in;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 15rem;
-    width: 12rem;
+.card {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	box-shadow: 0 2px 20px gray;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: transform 200ms ease-in;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 15rem;
+	width: 12rem;
 }
 
-.card:hover{
-    transform: scale(1.02);
+.card:hover {
+	transform: scale(1.02);
 }
 
-.card-title{
-    color: white;
-    background-color: black;
-    width: 100%;
-    height: auto;
-    font-weight: bold;
-    font-size: 1rem;
-    padding: 0 1rem;
+.cardTitle {
+	color: white;
+	background-color: black;
+	width: 100%;
+	height: auto;
+	font-weight: bold;
+	font-size: 1rem;
+	padding: 0 1rem;
 }
 
-a{
-    text-decoration: none;
+a {
+	text-decoration: none;
 }

@@ -24,14 +24,14 @@ export default function Item() {
 				<h1>{item.title}</h1>
 				<div className='itemTop'>
 					<div className='itemTopLeft'>
-						<img src={item.cover ?? '/images/nocover.jpeg'} />
+						<img src={item.cover ?? '/images/nocover.jpeg'} alt=''/>
 					</div>
 					<div className='itemTopRight'>
 						<h4>Have I read this?</h4>
 						{item?.status === 'true' ? (
-							<img src='/images/yes.png' />
+							<img src='/images/yes.png' alt='yes'/>
 						) : (
-							<img src='/images/no.png' />
+							<img src='/images/no.png' alt='no'/>
 						)}
 
 						<h4>Subtitle</h4>

@@ -7,7 +7,6 @@ import { HEROKUURL } from '../environmentVariables'
 export default function AddItem({ scannedData }) {
 	const { collectionId, userId } = useParams()
 	const navigate = useNavigate()
-
 	const titleRef = useRef()
 	const subtitleRef = useRef()
 	const authorsRef = useRef()
@@ -49,18 +48,18 @@ export default function AddItem({ scannedData }) {
 		<>
 			<div className='addItem'>
 				<div className='addItemLeft'>
-					<img src={scannedData?.cover} />
+					<img src={scannedData?.cover} alt=''/>
 				</div>
 				<div className='addItemRight'>
 					<h4>Have I read this?</h4>
 					<div className='addItemRightStatus'>
 						<div className='addItemRightStatus'>
 							<input ref={yesStatusRef} type='radio' />
-							<img src='/images/yes.png' />
+							<img src='/images/yes.png' alt=''/>
 						</div>
 						<div className='addItemRightStatus'>
 							<input ref={noStatusRef} type='radio' />
-							<img src='/images/no.png' />
+							<img src='/images/no.png' alt=''/>
 						</div>
 					</div>
 					<h4>Title</h4>
